@@ -85,4 +85,57 @@
   posterClose?.addEventListener('click',()=>posterModal?.close());
   posterModal?.addEventListener('click',e=>{ if(e.target===posterModal) posterModal.close(); });
   addEventListener('keydown',e=>{ if(e.key==='Escape'){ closeMenu(); if(welcomePopup&&!welcomePopup.hidden) closeWelcome(e); } });
+
+  // School directions: works on the homepage location card and Contact route planner.
+  const directionTriggers = [...document.querySelectorAll('[data-school-directions]')];
+  if (directionTriggers.length) {
+    const destination = 'The Cambridge School, Indraprastha Colony, Lucknow Road, Hardoi, Uttar Pradesh 241001';
+    const fallbackUrl = 'https://www.google.com/maps/dir/?api=1&destination=' + encodeURIComponent(destination) + '&travelmode=driving';
+
+    const openRoute = (origin) => {
+      const url = 'https://www.google.com/maps/dir/?api=1&origin=' + encodeURIComponent(origin) + '&destination=' + encodeURIComponent(destination) + '&travelmode=driving';
+      window.open(url, '_blank', 'noopener');
+    };
+
+    directionTriggers.forEach(trigger => {
+      trigger.addEventListener('click', event => {
+        event.preventDefault();
+        const status = document.getElementById('location-status');
+        const originInput = document.getElementById('route-origin-input');
+        const originalText = trigger.textContent;
+
+        if (!navigator.geolocation) {
+          if (status) status.textContent = 'Your browser does not provide location access. Google Maps will let you choose your starting point.';
+          window.open(fallbackUrl, '_blank', 'noopener');
+          return;
+        }
+
+        if (trigger.tagName === 'BUTTON') {
+          trigger.disabled = true;
+          trigger.textContent = 'Finding your location…';
+        }
+        if (status) status.textContent = 'Please allow location access when your browser asks.';
+
+        navigator.geolocation.getCurrentPosition(position => {
+          const origin = position.coords.latitude + ',' + position.coords.longitude;
+          if (originInput) originInput.value = 'Current location detected';
+          if (status) status.textContent = 'Location found. Opening your driving route in Google Maps…';
+          openRoute(origin);
+          if (trigger.tagName === 'BUTTON') {
+            trigger.disabled = false;
+            trigger.textContent = originalText;
+          }
+        }, () => {
+          if (originInput) originInput.value = 'Choose starting point in Google Maps';
+          if (status) status.textContent = 'Location access was unavailable. Google Maps will open so you can choose your starting point manually.';
+          window.open(fallbackUrl, '_blank', 'noopener');
+          if (trigger.tagName === 'BUTTON') {
+            trigger.disabled = false;
+            trigger.textContent = originalText;
+          }
+        }, { enableHighAccuracy: true, timeout: 10000, maximumAge: 300000 });
+      });
+    });
+  }
+
 })();
