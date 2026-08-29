@@ -88,76 +88,70 @@ h1,h2,h3,h4{margin-top:0;letter-spacing:-.035em;line-height:1.08}h2{font-size:cl
 .route-input-copy>span{display:block;margin-top:5px;color:var(--muted);font-size:11px;line-height:1.45}
 @media(max-width:680px){.brand-mark{width:52px;height:52px;padding:5px;border-radius:15px}.brand-mark img{border-radius:10px}}
 
-/* 2026-08-29 leadership portrait redesign */
-.leadership-hero{padding-bottom:78px}
-.leadership-hero:after{content:"";position:absolute;width:320px;height:320px;right:-90px;bottom:-160px;border:1px solid rgba(238,191,41,.22);border-radius:50%;box-shadow:0 0 0 54px rgba(238,191,41,.035),0 0 0 108px rgba(238,191,41,.025)}
-.leadership-section{position:relative;overflow:hidden;background:linear-gradient(180deg,#fff 0%,#faf9fd 100%)}
-.leadership-section:before{content:"";position:absolute;width:420px;height:420px;left:-250px;top:220px;border-radius:50%;background:radial-gradient(circle,rgba(238,191,41,.10),rgba(238,191,41,0) 68%);pointer-events:none}
-.leadership-heading{max-width:760px;margin-bottom:32px}
-.leadership-heading h2{margin:12px 0 14px;font-size:clamp(38px,4.3vw,58px)}
-.leadership-heading p{max-width:690px}
-.leadership-shell{border:0;border-radius:0;background:transparent;box-shadow:none;overflow:visible}
-.leadership-tabs{width:min(760px,100%);display:grid;grid-template-columns:repeat(3,1fr);gap:7px;margin:0 0 22px;padding:7px;border:1px solid var(--line);border-radius:18px;background:#fff;box-shadow:0 12px 32px rgba(23,20,62,.07)}
-.leadership-tabs .tab-button{min-height:56px;display:flex;align-items:center;justify-content:center;gap:10px;padding:9px 14px;border:0!important;border-radius:12px;background:transparent;color:#666477;font-size:12px;font-weight:900;letter-spacing:.01em;transition:background .22s,color .22s,box-shadow .22s,transform .22s}
-.leadership-tabs .tab-button:hover{background:rgba(40,36,97,.055);color:var(--navy)}
-.leadership-tabs .tab-button.active{background:var(--navy);color:#fff;box-shadow:0 8px 20px rgba(40,36,97,.18);transform:translateY(-1px)}
-.leadership-tabs .tab-index{min-width:28px;height:28px;display:inline-grid;place-items:center;border-radius:9px;background:rgba(40,36,97,.07);color:var(--gold);font-size:9px;letter-spacing:.08em}
-.leadership-tabs .tab-button.active .tab-index{background:var(--yellow);color:var(--navy)}
+/* 2026-08-29 leadership compact profile layout */
+.leadership-hero{padding-bottom:72px}
+.leadership-section{background:linear-gradient(180deg,#fff 0%,#fbfafe 100%)}
+.leadership-heading{max-width:760px;margin-bottom:30px}
+.leadership-heading h2{margin:12px 0 14px;font-size:clamp(36px,4vw,54px)}
+.leadership-heading p{max-width:680px}
+.leadership-shell{overflow:hidden;border:1px solid var(--line);border-radius:24px;background:#fff;box-shadow:0 18px 55px rgba(23,20,62,.08)}
+.leadership-tabs{display:grid;grid-template-columns:repeat(3,1fr);margin:0;border-bottom:1px solid var(--line);background:#faf9fc}
+.leadership-tabs .tab-button{min-height:64px;padding:14px 20px;border:0!important;border-right:1px solid var(--line)!important;border-radius:0;background:transparent;color:#666477;font-size:12px;font-weight:900;letter-spacing:.01em;transition:background .2s,color .2s,box-shadow .2s}
+.leadership-tabs .tab-button:last-child{border-right:0!important}
+.leadership-tabs .tab-button:hover{background:#fff;color:var(--navy)}
+.leadership-tabs .tab-button.active{position:relative;background:#fff;color:var(--navy);box-shadow:inset 0 -3px 0 var(--yellow)}
 .leadership-panel{padding:0}
-.leadership-card{display:grid;grid-template-columns:minmax(300px,.78fr) minmax(0,1.22fr);min-height:570px;overflow:hidden;border:1px solid var(--line);border-radius:32px;background:#fff;box-shadow:0 24px 70px rgba(23,20,62,.11)}
-.leadership-profile{position:relative;min-height:570px;overflow:hidden;background:var(--navy-deep);isolation:isolate}
-.leadership-profile:before{content:"";position:absolute;z-index:0;inset:0;background:radial-gradient(circle at 50% 20%,rgba(238,191,41,.25),transparent 38%),linear-gradient(145deg,#2f2a72 0%,#17143e 72%)}
-.leadership-profile:after{content:"";position:absolute;z-index:3;left:0;right:0;top:0;height:6px;background:linear-gradient(90deg,var(--gold),var(--yellow),var(--gold))}
-.leadership-photo{position:absolute;z-index:1;inset:0;display:flex;align-items:flex-end;justify-content:center;overflow:hidden}
-.leadership-photo img{width:100%;height:100%;object-fit:cover;object-position:center center;filter:saturate(.94) contrast(1.01)}
-.leadership-profile-chairperson .leadership-photo{background:#f3efe8}
-.leadership-profile-chairperson .leadership-photo img{object-position:50% 24%;transform:scale(1.01)}
-.leadership-profile-vice .leadership-photo img{object-position:50% 29%}
-.leadership-profile-principal .leadership-photo{padding:42px 18px 0;background:radial-gradient(circle at 50% 25%,#55509a 0%,#302b70 42%,#17143e 100%)}
-.leadership-profile-principal .leadership-photo img{height:100%;object-fit:contain;object-position:center bottom;filter:saturate(.97) contrast(1.02);transform:scale(1.03);transform-origin:center bottom}
-.leadership-profile-overlay{position:absolute;z-index:2;inset:0;background:linear-gradient(to top,rgba(15,13,46,.88) 0%,rgba(15,13,46,.48) 21%,rgba(15,13,46,.06) 48%,transparent 72%)}
-.leadership-role-card{position:absolute;z-index:4;left:24px;right:24px;bottom:24px;padding:18px 18px 17px;border:1px solid rgba(255,255,255,.18);border-radius:17px;background:rgba(23,20,62,.66);backdrop-filter:blur(16px);box-shadow:0 14px 30px rgba(0,0,0,.16)}
-.leadership-role-card small{display:block;margin-bottom:5px;color:var(--yellow-soft);font-size:9px;font-weight:900;text-transform:uppercase;letter-spacing:.16em}
-.leadership-role-card strong{display:block;color:#fff;font-size:22px;line-height:1.1;letter-spacing:-.02em}
-.leadership-message{position:relative;align-self:center;padding:56px 58px 54px;overflow:hidden}
-.leadership-message:after{content:"";position:absolute;width:190px;height:190px;right:-105px;bottom:-120px;border-radius:50%;background:rgba(238,191,41,.08);pointer-events:none}
-.leadership-kicker{display:inline-flex;align-items:center;gap:9px;color:var(--gold);font-size:10px;font-weight:950;text-transform:uppercase;letter-spacing:.16em}
-.leadership-kicker:before{content:"";width:26px;height:2px;border-radius:999px;background:var(--yellow)}
-.leadership-quote{position:absolute;right:42px;top:26px;color:rgba(40,36,97,.065);font-family:Georgia,serif;font-size:132px;line-height:1;font-weight:700;pointer-events:none}
-.leadership-message h2{position:relative;max-width:640px;margin:16px 0 20px;color:var(--navy);font-size:clamp(34px,3.7vw,50px);letter-spacing:-.04em}
-.leadership-message p{position:relative;max-width:700px;margin:0 0 15px;color:#676676;font-size:15px;line-height:1.82}
-.leadership-message .message-lead{color:#39384b;font-size:18px;font-weight:720;line-height:1.65}
-.leadership-signoff{position:relative;display:flex;align-items:center;gap:13px;margin-top:27px;padding-top:20px;border-top:1px solid var(--line)}
-.leadership-signoff>span{width:37px;height:37px;flex:0 0 auto;border-radius:11px;background:var(--navy);box-shadow:inset 0 0 0 8px var(--yellow)}
-.leadership-signoff div{display:grid;line-height:1.25}
-.leadership-signoff strong{color:var(--navy);font-size:13px}
-.leadership-signoff small{margin-top:4px;color:var(--muted);font-size:10px}
-@media(max-width:930px){
-  .leadership-card{grid-template-columns:minmax(245px,.72fr) minmax(0,1.28fr);min-height:530px}
-  .leadership-profile{min-height:530px}
-  .leadership-message{padding:44px 38px}
-  .leadership-quote{right:28px;top:20px;font-size:105px}
+.leadership-message-row{display:grid;grid-template-columns:190px minmax(0,1fr);gap:38px;align-items:start;padding:38px 42px 40px}
+.leadership-person{width:190px}
+.message-avatar{position:relative;width:180px;height:205px;overflow:hidden;border:1px solid rgba(40,36,97,.12);border-radius:18px;background:#f2f0f7;box-shadow:0 12px 28px rgba(23,20,62,.10)}
+.message-avatar:after{content:"";position:absolute;left:0;right:0;bottom:0;height:4px;background:linear-gradient(90deg,var(--gold),var(--yellow),var(--gold))}
+.message-avatar img{display:block;width:100%;height:100%;object-fit:cover;object-position:center 22%}
+#vice-chairman .message-avatar img{object-position:center 26%}
+.principal-avatar{background:linear-gradient(145deg,#f8f7fc,#e8e6f2)}
+.principal-avatar img{object-fit:contain;object-position:center bottom;padding:8px 4px 0}
+.person-role{padding:14px 4px 0}
+.person-role strong{display:block;color:var(--navy);font-size:15px;line-height:1.2}
+.person-role span{display:block;margin-top:5px;color:var(--muted);font-size:10px;font-weight:700;line-height:1.35}
+.message-copy{position:relative;min-width:0;padding:2px 8px 0 0}
+.leadership-kicker{display:inline-flex;align-items:center;gap:9px;color:var(--gold);font-size:10px;font-weight:950;text-transform:uppercase;letter-spacing:.15em}
+.leadership-kicker:before{content:"";width:24px;height:2px;border-radius:999px;background:var(--yellow)}
+.message-copy h2{margin:12px 0 16px;color:var(--navy);font-size:clamp(29px,3vw,40px);letter-spacing:-.035em;line-height:1.1}
+.message-copy p{max-width:800px;margin:0 0 14px;color:#696878;font-size:14.5px;line-height:1.78}
+.message-copy .message-lead{color:#363548;font-size:16.5px;font-weight:720;line-height:1.65}
+.message-signoff{display:inline-flex;align-items:center;gap:9px;margin-top:8px;padding-top:16px;border-top:1px solid var(--line);color:var(--navy);font-size:11px;font-weight:850;letter-spacing:.02em}
+.message-signoff:before{content:"";width:24px;height:3px;border-radius:99px;background:var(--yellow)}
+@media(max-width:860px){
+  .leadership-message-row{grid-template-columns:160px minmax(0,1fr);gap:28px;padding:32px}
+  .leadership-person{width:160px}
+  .message-avatar{width:152px;height:176px}
+  .message-copy h2{font-size:31px}
 }
-@media(max-width:720px){
-  .leadership-hero{padding-bottom:62px}
-  .leadership-heading{margin-bottom:24px}
-  .leadership-tabs{grid-template-columns:1fr;gap:5px;padding:6px;border-radius:16px}
-  .leadership-tabs .tab-button{justify-content:flex-start;min-height:50px;padding:8px 12px}
-  .leadership-card{grid-template-columns:1fr;min-height:0;border-radius:25px}
-  .leadership-profile{min-height:0;height:430px}
-  .leadership-profile-chairperson .leadership-photo img{object-position:50% 18%}
-  .leadership-profile-vice .leadership-photo img{object-position:50% 28%}
-  .leadership-profile-principal .leadership-photo{padding:32px 20px 0}
-  .leadership-role-card{left:18px;right:18px;bottom:18px;padding:15px 16px}
-  .leadership-role-card strong{font-size:19px}
-  .leadership-message{padding:36px 24px 38px}
-  .leadership-quote{right:18px;top:17px;font-size:86px}
-  .leadership-message h2{max-width:90%;margin-top:14px;font-size:34px}
-  .leadership-message .message-lead{font-size:16px}
-  .leadership-message p{font-size:14px;line-height:1.75}
+@media(max-width:680px){
+  .leadership-tabs{grid-template-columns:1fr}
+  .leadership-tabs .tab-button{min-height:52px;text-align:left;border-right:0!important;border-bottom:1px solid var(--line)!important}
+  .leadership-tabs .tab-button:last-child{border-bottom:0!important}
+  .leadership-tabs .tab-button.active{box-shadow:inset 4px 0 0 var(--yellow)}
+  .leadership-message-row{grid-template-columns:116px minmax(0,1fr);gap:18px;padding:24px 20px 28px}
+  .leadership-person{width:116px}
+  .message-avatar{width:110px;height:132px;border-radius:14px}
+  .person-role{padding-top:10px}
+  .person-role strong{font-size:12px}
+  .person-role span{font-size:9px}
+  .message-copy{padding-right:0}
+  .leadership-kicker{font-size:8.5px;letter-spacing:.12em}
+  .leadership-kicker:before{width:16px}
+  .message-copy h2{margin:9px 0 12px;font-size:24px}
+  .message-copy p{font-size:13px;line-height:1.68}
+  .message-copy .message-lead{font-size:14px;line-height:1.6}
+  .message-signoff{font-size:10px}
 }
-@media(max-width:430px){
-  .leadership-profile{height:370px}
-  .leadership-profile-principal .leadership-photo{padding-inline:8px}
-  .leadership-message h2{font-size:31px}
+@media(max-width:470px){
+  .leadership-message-row{grid-template-columns:92px minmax(0,1fr);gap:14px;padding:20px 16px 24px}
+  .leadership-person{width:92px}
+  .message-avatar{width:88px;height:108px;border-radius:12px}
+  .person-role strong{font-size:11px}
+  .person-role span{display:none}
+  .message-copy h2{font-size:21px}
+  .message-copy .message-lead{font-size:13.5px}
 }
+
