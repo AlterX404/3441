@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://thecambridgeschool.co.in/sitemap.xml

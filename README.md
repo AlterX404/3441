@@ -1,21 +1,23 @@
-# The Cambridge School website redesign
+# The Cambridge School — redesigned static site
 
-A static, responsive redesign prepared for GitHub Pages.
+GitHub Pages ready. No build step and no ASP.NET postbacks.
 
-## Brand palette
+## Main pages
+- `index.html` — Home
+- `about.html` — About
+- `leadership.html` — Chairperson, Vice Chairman and Principal messages in tabs
+- `academics.html` — Academics & learning
+- `admissions.html` — Admissions and 2024–25 fee structure
+- `facilities.html` — Facilities & campus
+- `gallery.html` — Gallery & media
+- `faculty.html` — Faculty & student support
+- `careers.html` — Careers
+- `mpd.html` — Mandatory Public Disclosure
+- `contact.html` — Contact
+- `404.html` — GitHub Pages fallback
 
-- Cambridge Navy: `#282461`
-- Heritage Gold: `#C3A207`
-- Warm Yellow: `#EEBF29`
+## Important content note
+The source ZIP only contained the homepage. The linked legacy pages `Chairperson_Message.aspx`, `vice_chairman.aspx`, `Principalmsg.aspx` and `MPD.aspx` were not present in the archive. Leadership copy is therefore marked as an editorial draft. MPD fields that require official data/documents are marked `Required upload` instead of being invented.
 
-These colors were sampled directly from the provided school crest.
-
-## Publish on GitHub Pages
-
-1. Create a GitHub repository.
-2. Upload the contents of this folder, keeping `index.html` in the repository root.
-3. Open **Settings → Pages**.
-4. Under **Build and deployment**, choose **Deploy from a branch**.
-5. Select your main branch and `/ (root)`, then save.
-
-The site has no build step and uses only local assets.
+## Fee document
+The user-supplied `fee chart new.pdf` is included at `documents/fee-structure-2024-25.pdf` and represented in responsive HTML tables on the Admissions & Fees page.
